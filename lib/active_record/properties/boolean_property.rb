@@ -8,7 +8,7 @@ module ActiveRecord
       end
 
       add_property_accessor '_enabled?', '?' do |property|
-        ActiveRecord::Type::Boolean.new.type_cast_from_database(properties[property.name.to_s])
+        ActiveRecord::Type::Boolean.new.cast(properties[property.name.to_s])
       end
 
       add_property_accessor '_raise!', '_enable!' do |property|
